@@ -20,7 +20,7 @@ jobs:
             KERNEL_SOURCE_BRANCH
             KERNEL_CONFIG
             KERNEL_IMAGE_NAME
-            ARCH
+            ARCHf
             ADD_LOCALVERSION_TO_FILENAME
             EXTRA_CMDS
             USE_CUSTOM_CLANG
@@ -96,7 +96,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         mkdir clang-aosp
-        wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/${{ env.CLANG_BRANCH }}/clang-${{ env.CLANG_VERSION }}.tar.gz
+        wget https://gitlab.com/tejas101k/clang-r450784d/-/archive/master/clang-${{ env.CLANG_VERSION }}.tar.gz?ref_type=heads
         tar -C clang-aosp/ -zxvf clang-${{ env.CLANG_VERSION }}.tar.gz
 
     - name: Download Custom-Clang
